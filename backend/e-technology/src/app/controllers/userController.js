@@ -5,7 +5,18 @@ const bcrypt = require("bcryptjs");
 
 const User = require("../models/user");
 
-router.use(authMiddleware);
+// router.use(authMiddleware);
+
+// router.get("/:user_email", async (req, res) => {
+//   try {
+//     console.log(req.params.user_email);
+//     const user = await User.findOne({ email: req.params.user_email });
+//     console.log(user);
+//     return res.status(200).send({ user });
+//   } catch (err) {
+//     return res.status(400).send({ error: "Error loading user." });
+//   }
+// });
 
 router.get("/:user_email", async (req, res) => {
   try {
@@ -26,7 +37,7 @@ router.put("/:user_id", async (req, res) => {
     );
 
     user.senha = undefined;
-    console.log(user);
+    console.log("Teste");
     return res.status(200).send({ user });
   } catch (err) {
     return res.status(400).send({ error: "Error updating user." });
