@@ -54,9 +54,6 @@ export default new Vuex.Store({
         context.commit("UPDATE_LOGIN", true);
       });
     },
-    setSenhaUsuario(context, payload){
-
-    },
     criarUsuario(context, payload) {
       return api.post("/auth/register", payload);
     },
